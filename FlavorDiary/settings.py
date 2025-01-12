@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 
 MY_APPS = [
     'recipes',
-    'accounts'
+    'accounts',
+    'ingredients'
 ]
 
 INSTALLED_APPS = [

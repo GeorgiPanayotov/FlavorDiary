@@ -1,5 +1,4 @@
 from django.db import models
-from FlavorDiary.ingredients.models import Ingredient
 
 
 class Recipe(models.Model):
@@ -8,7 +7,7 @@ class Recipe(models.Model):
     )
 
     ingredients = models.ManyToManyField(
-        'Ingredient',
+        to='ingredients.Ingredient',
         related_name='recipes',
         through='IngredientRecipe'
     )
@@ -21,6 +20,8 @@ class Recipe(models.Model):
         default=0,
         blank=True,
     )
+
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.recipe_name

@@ -83,7 +83,7 @@ DATABASES = {
         "NAME": "flavordiary",
         "USER": "macbook",
         "PASSWORD": "270395",
-        "HOST": "localhost",
+        "HOST": "127.0.0.1",
         "PORT": "5432",
     }
 }

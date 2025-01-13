@@ -1,6 +1,5 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-# from cloudinary.models import CloudinaryField
 
 
 class CustomUser(AbstractUser):
@@ -19,33 +18,15 @@ class UserProfile(models.Model):
         related_name='profile',
     )
 
-    first_name = models.CharField(
-        max_length=MAX_NAME_LENGTH,
-        # validators=[NameValidator()], """NameValidator to be added"""
-        blank=False,
-        null=False,
-    )
-
-    last_name = models.CharField(
-        max_length=MAX_NAME_LENGTH,
-        # validators=[NameValidator()], """NameValidator to be added"""
-        blank=False,
-        null=False,
-    )
-
     date_of_birth = models.DateField(
         blank=True,
         null=True
     )
 
-    # profile_picture = CloudinaryField(
-    #     null=True,
-    #     blank=True,
-    #     verbose_name='Profile Picture',
-    # )
-
-    bio = models.TextField(
-        blank=True
+    profile_picture = models.ImageField(
+        null=True,
+        blank=True,
+        verbose_name='Profile Picture',
     )
 
     phone_number = models.CharField(
